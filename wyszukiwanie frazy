@@ -1,0 +1,21 @@
+state = False
+number = 0
+letter = 0
+
+text = input('Text: ')
+x = input('Szukana fraza: ')
+
+for item in text:
+    if item == x[letter]:
+        letter += 1
+        if letter == len(x):
+            letter = 0
+            number += 1
+            state = True
+    else:
+        letter = 0
+
+if state:
+    print(f'Znaleziono frazę "{x}" {number} razy!')
+else:
+    print(f'Nie znaleziono frazy "{x}"!')
